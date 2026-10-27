@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雏翼长青 · 南航青年人才成长平台</title>
+<meta name="description" content="雏翼长青 —— 中国南方航空青年人才成长平台：录入你的身份，完成测评，生成属于你自己的成长数据。">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<!-- =========================================================
+     ONBOARDING
+     ========================================================= -->
+<section class="ob" id="onboarding">
+  <div class="ob-brand">
+    <div class="ob-brand-inner">
+      <div class="ob-logo">
+        <svg viewBox="0 0 40 40" fill="none">
+          <path d="M20 3.5c1.7 0 2.6 1.4 2.6 3.3v6.6l9.6 5.6v3.4l-9.6-2.8v5.4l3.6 2.6v2.6L20 28.7l-6.2 1.5v-2.6l3.6-2.6v-5.4l-9.6 2.8v-3.4l9.6-5.6V6.8c0-1.9.9-3.3 2.6-3.3Z" fill="url(#obGrad)"/>
+          <path d="M4.5 27.5c7.6-6.8 18.2-9.2 31-6" stroke="#9ED3F4" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="2 3" opacity=".75"/>
+          <defs>
+            <linearGradient id="obGrad" x1="10" y1="4" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#BFE7FB"/><stop offset="1" stop-color="#4FB3E8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <p class="ob-brand-name">雏翼长青</p>
+      <p class="ob-brand-sub">CHINA SOUTHERN · YOUNG WINGS</p>
+      <p class="ob-brand-corp">中国南方航空 · 青年人才成长平台</p>
+
+      <div class="ob-quote">
+        <p>“成长不是感觉，<br>是可以回看的证据。”</p>
+        <span>从录入你自己开始，让平台的数据真正属于你。</span>
+      </div>
+
+      <ul class="ob-points">
+        <li><i>1</i><div><strong>录入真实身份</strong><em>部门、岗位、入职时间与目标</em></div></li>
+        <li><i>2</i><div><strong>完成 9 道情境测评</strong><em>由你的选择生成六维能力坐标</em></div></li>
+        <li><i>3</i><div><strong>获得你的成长数据</strong><em>成长指数、培养计划与导师匹配</em></div></li>
+      </ul>
+    </div>
+    <div class="ob-brand-rings" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+    <svg class="ob-plane" viewBox="0 0 200 200" aria-hidden="true">
+      <path d="M100 18c8 0 12 7 12 16v33l48 28v17l-48-14v27l18 13v13l-30-8-30 8v-13l18-13v-27l-48 14V85l48-28V34c0-9 4-16 12-16Z" fill="currentColor"/>
+      <path d="M20 158c42-30 100-38 164-18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 6" opacity=".55"/>
+    </svg>
+  </div>
+
+  <div class="ob-panel">
+    <div class="ob-panel-inner">
+      <div class="ob-top">
+        <span class="ob-step-no" id="obStepNo">01</span>
+        <div class="ob-progress"><i id="obProgress" style="width:33%"></i></div>
+        <span class="ob-step-name" id="obStepName">你的身份</span>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="ob-step is-active" id="obStep1">
+        <h1>先认识一下你</h1>
+        <p class="ob-lead">这些信息只用来生成你的成长画像，你可以随时修改。</p>
+
+        <div class="ob-grid">
+          <label class="field">
+            <span>姓名 <b>*</b></span>
+            <input id="obName" type="text" placeholder="请输入你的姓名" autocomplete="off">
+          </label>
+          <label class="field">
+            <span>部门</span>
+            <select id="obDept">
+              <option value="">请选择部门</option>
+              <option>产品</option><option>技术</option><option>运营</option>
+              <option>市场</option><option>设计</option><option>人力</option>
+              <option>财务</option><option>其他</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>岗位</span>
+            <input id="obRole" type="text" placeholder="例如：产品运营" autocomplete="off">
+          </label>
+          <label class="field">
+            <span>职级</span>
+            <select id="obLevel">
+              <option value="">请选择职级</option>
+              <option>管培生</option><option>P4</option><option>P5</option>
+              <option>P6</option><option>P7</option><option>M1</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>入职时间</span>
+            <input id="obJoined" type="month">
+          </label>
+          <label class="field">
+            <span>导师（选填）</span>
+            <input id="obMentor" type="text" placeholder="填写你希望连接的导师姓名" autocomplete="off">
+          </label>
+        </div>
+
+        <p class="ob-error" id="obError" hidden>请先填写你的姓名。</p>
+
+        <div class="ob-actions">
+          <span class="ob-tip">约 2 分钟完成录入</span>
+          <button class="btn primary" id="obNext">下一步
+            <svg class="ico-xs" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="ob-step" id="obStep2" hidden>
+        <h1>你的起点，你自己定义</h1>
+        <p class="ob-lead">凭直觉给自己打个分（0–10）。这不是考试，只是让平台知道你从哪里出发。</p>
+
+        <div class="ob-self">
+          <div class="self-row" data-dim="learn">
+            <div class="self-label"><strong>学习敏锐度</strong><em>快速从经验里提取规律</em></div>
+            <input type="range" min="0" max="10" value="6">
+            <b class="self-val">6</b>
+          </div>
+          <div class="self-row" data-dim="collab">
+            <div class="self-label"><strong>协作影响力</strong><em>让别人愿意和你一起成事</em></div>
+            <input type="range" min="0" max="10" value="6">
+            <b class="self-val">6</b>
+          </div>
+          <div class="self-row" data-dim="lead">
+            <div class="self-label"><strong>领导潜能</strong><em>在模糊中定方向、担责任</em></div>
+            <input type="range" min="0" max="10" value="5">
+            <b class="self-val">5</b>
+          </div>
+          <div class="self-row" data-dim="expert">
+            <div class="self-label"><strong>专业深度</strong><em>形成可复用的方法论</em></div>
+            <input type="range" min="0" max="10" value="6">
+            <b class="self-val">6</b>
+          </div>
+          <div class="self-row" data-dim="innov">
+            <div class="self-label"><strong>创新驱动</strong><em>提出并验证新的可能</em></div>
+            <input type="range" min="0" max="10" value="5">
+            <b class="self-val">5</b>
+          </div>
+          <div class="self-row" data-dim="resil">
+            <div class="self-label"><strong>韧性抗压</strong><em>压力下保持稳定输出</em></div>
+            <input type="range" min="0" max="10" value="5">
+            <b class="self-val">5</b>
+          </div>
+        </div>
+
+        <div class="ob-actions">
+          <button class="btn ghost" id="obBack">上一步</button>
+          <button class="btn primary" id="obNext2">下一步
+            <svg class="ico-xs" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="ob-step" id="obStep3" hidden>
+        <h1>你想成为什么样的人</h1>
+        <p class="ob-lead">目标决定平台为你推荐什么。选一个最接近当下的方向。</p>
+
+        <p class="ob-label">职业目标</p>
+        <div class="ob-goals" id="obGoals">
+          <button class="ob-goal" data-goal="lead"><strong>成为管理者</strong><em>带团队打硬仗</em></button>
+          <button class="ob-goal" data-goal="expert"><strong>成为专家</strong><em>在专业上被需要</em></button>
+          <button class="ob-goal" data-goal="innov"><strong>从 0 到 1</strong><em>做没做过的事</em></button>
+          <button class="ob-goal" data-goal="learn"><strong>持续进化</strong><em>长期主义者</em></button>
+        </div>
+
+        <div class="ob-hours">
+          <div class="ob-label-row">
+            <span class="ob-label">每周可投入学习时间</span>
+            <b id="obHoursVal">4 小时</b>
+          </div>
+          <input id="obHours" type="range" min="1" max="12" value="4">
+        </div>
+
+        <label class="field ob-wide">
+          <span>当下最想解决的一个成长问题（选填）</span>
+          <textarea id="obChallenge" rows="3" placeholder="例如：项目里我总是补位，但很少有机会真正主导一件事。"></textarea>
+        </label>
+
+        <div class="ob-actions">
+          <button class="btn ghost" id="obBack2">上一步</button>
+          <button class="btn primary" id="obSubmit">生成我的成长空间
+            <svg class="ico-xs" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+        <p class="ob-fine">数据仅保存在本机浏览器，可随时清空。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="gen" id="genOverlay" hidden>
+    <div class="gen-orbit">
+      <span></span><span></span><span></span>
+      <div class="gen-core">雏</div>
+    </div>
+    <h3>AI 正在构建你的成长画像</h3>
+    <ul class="gen-steps" id="genSteps">
+      <li><i></i>解析你的起点自评</li>
+      <li><i></i>匹配岗位成长路径</li>
+      <li><i></i>生成培养与导师建议</li>
+    </ul>
+  </div>
+</section>
+
+<div class="app" id="app" hidden>
+  <!-- ================= Sidebar ================= -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none">
+          <path d="M20 3.5c1.7 0 2.6 1.4 2.6 3.3v6.6l9.6 5.6v3.4l-9.6-2.8v5.4l3.6 2.6v2.6L20 28.7l-6.2 1.5v-2.6l3.6-2.6v-5.4l-9.6 2.8v-3.4l9.6-5.6V6.8c0-1.9.9-3.3 2.6-3.3Z" fill="url(#wingGrad)"/>
+          <path d="M4.5 27.5c7.6-6.8 18.2-9.2 31-6" stroke="#9ED3F4" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="2 3" opacity=".75"/>
+          <defs>
+            <linearGradient id="wingGrad" x1="10" y1="4" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#BFE7FB"/><stop offset="1" stop-color="#4FB3E8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <div class="brand-name">雏翼长青</div>
+        <div class="brand-sub">CHINA SOUTHERN · TALENT</div>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="主导航">
+      <p class="nav-label">成长中心</p>
+      <button class="nav-item is-active" data-goto="overview">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>
+        <span>成长全景</span>
+        <i class="nav-dot"></i>
+      </button>
+      <button class="nav-item" data-goto="assessment">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>
+        <span>职业发展测评</span>
+        <i class="nav-pend" data-pend="assessment"></i>
+      </button>
+      <button class="nav-item" data-goto="training">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2Z"/><path d="M4 19.5A2 2 0 0 1 6 17.5h13"/><path d="M8.5 7.5h6"/></svg>
+        <span>培训推荐</span>
+      </button>
+      <button class="nav-item" data-goto="mentor">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c.4-3.4 2.5-5.3 5.5-5.3s5.1 1.9 5.5 5.3"/><circle cx="17" cy="9" r="2.4"/><path d="M17.5 14.2c2.1.3 3.4 1.8 3.7 4.3"/></svg>
+        <span>导师匹配</span>
+      </button>
+
+      <p class="nav-label">我的成长</p>
+      <button class="nav-item" data-goto="archive">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M3.5 7.5h17V20a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1Z"/><path d="M3 7.5 5 3.5h14l2 4"/><path d="M9.5 12h5"/></svg>
+        <span>成长档案</span>
+      </button>
+      <button class="nav-item" data-goto="feedback">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M21 11.6a8.2 8.2 0 0 1-11.9 7.3L4 20.5l1.7-4.9A8.2 8.2 0 1 1 21 11.6Z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg>
+        <span>员工反馈</span>
+        <span class="nav-badge" id="feedbackBadge">1</span>
+      </button>
+    </nav>
+
+    <div class="sidebar-spacer"></div>
+
+    <button class="coach-mini" data-coach>
+      <div class="coach-mini-top">
+        <span class="spark-ico">
+          <svg viewBox="0 0 24 24"><path d="m12 3 1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4Z"/></svg>
+        </span>
+        <span class="live-dot"></span>
+      </div>
+      <strong>AI 发展教练</strong>
+      <p>基于你的测评，随时聊聊</p>
+      <span class="coach-mini-link">开始对话 <svg class="ico-xs" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+    </button>
+
+    <div class="sidebar-user" id="sidebarUser">
+      <div class="avatar avatar-sm" id="sideAvatar">你</div>
+      <div class="sidebar-user-text">
+        <strong id="sideName">未命名</strong>
+        <span id="sideRole">—</span>
+      </div>
+      <button class="icon-btn icon-btn-dark" id="sideMenuBtn" aria-label="账号与身份">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg>
+      </button>
+      <div class="profile-menu" id="sideMenu" hidden>
+        <button data-profile-action="edit">编辑我的资料</button>
+        <button data-profile-action="restart">重新录入身份</button>
+        <button data-profile-action="clear" class="is-danger">清空所有数据</button>
+      </div>
+    </div>
+    <svg class="sidebar-plane" viewBox="0 0 200 200" aria-hidden="true">
+      <path d="M100 18c8 0 12 7 12 16v33l48 28v17l-48-14v27l18 13v13l-30-8-30 8v-13l18-13v-27l-48 14V85l48-28V34c0-9 4-16 12-16Z" fill="currentColor"/>
+      <path d="M18 156c44-32 104-40 168-18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="3 6"/>
+    </svg>
+  </aside>
+
+  <div class="scrim" id="scrim"></div>
+
+  <!-- ================= Main ================= -->
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="打开菜单">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="crumbs">
+        <span>南航 · 雏翼长青</span>
+        <svg class="ico-xs" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+        <span class="crumbs-current" id="crumb">成长全景</span>
+      </div>
+
+      <div class="topbar-right">
+        <div class="search" id="searchWrap">
+          <svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+          <input id="searchInput" type="text" placeholder="搜索课程、导师或能力项" autocomplete="off" aria-label="搜索">
+          <div class="search-pop" id="searchPop"></div>
+        </div>
+        <button class="demo-btn" id="startDemo">
+          <svg class="ico-xs" viewBox="0 0 24 24"><path d="M8 5.5 18.5 12 8 18.5Z"/></svg>
+          演示模式
+        </button>
+        <button class="icon-btn" id="bellBtn" aria-label="通知">
+          <svg class="ico" viewBox="0 0 24 24"><path d="M18 8.5a6 6 0 1 0-12 0c0 6.5-2.5 6.5-2.5 8.5h17c0-2-2.5-2-2.5-8.5Z"/><path d="M10.2 20.5a2 2 0 0 0 3.6 0"/></svg>
+          <i class="bell-dot"></i>
+        </button>
+        <button class="identity-chip" id="identityChip">
+          <span class="avatar avatar-xs" id="topAvatar">你</span>
+          <span class="identity-text">
+            <strong id="topName">未命名</strong>
+            <em id="topMeta">—</em>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <main class="content" id="content">
+
+      <!-- ================= OVERVIEW ================= -->
+      <section class="view is-active" id="view-overview" data-title="成长全景">
+        <div class="view-head">
+          <div>
+            <p class="eyebrow" id="greetingDate">—</p>
+            <h1>你好，<span id="greetingName">同学</span></h1>
+            <p class="lead" id="greetingLead">这是你刚刚建立的成长空间。完成测评后，这里的数据会由你自己填写的内容生成。</p>
+          </div>
+          <div class="head-actions">
+            <button class="btn ghost" data-goto="archive">查看成长档案</button>
+            <button class="btn primary" data-goto="assessment">开始测评
+              <svg class="ico-xs" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero" id="hero-card">
+          <div class="hero-glow" aria-hidden="true"></div>
+          <svg class="hero-arcs" viewBox="0 0 420 420" aria-hidden="true">
+            <circle cx="210" cy="210" r="120" fill="none" stroke="rgba(150,205,240,.20)" stroke-width="1"/>
+            <circle cx="210" cy="210" r="160" fill="none" stroke="rgba(150,205,240,.14)" stroke-width="1"/>
+            <circle cx="210" cy="210" r="200" fill="none" stroke="rgba(150,205,240,.09)" stroke-width="1"/>
+            <circle cx="210" cy="210" r="240" fill="none" stroke="rgba(150,205,240,.05)" stroke-width="1"/>
+          </svg>
+          <svg class="hero-flight" viewBox="0 0 420 420" aria-hidden="true">
+            <path d="M28 342C104 306 116 236 196 206s100-60 158-158" fill="none" stroke="rgba(168,219,250,.42)" stroke-width="1.3" stroke-dasharray="5 7"/>
+            <g transform="translate(196 206) rotate(28) scale(.62)">
+              <path d="M0-18c1.8 0 2.8 1.5 2.8 3.6v7.2L13.4 0v3.7L2.8 1.7v5.8l3.9 2.8v2.8L0 11.6l-6.7 1.5v-2.8l3.9-2.8V1.7l-10.6 2V0l10.6-7.2v-7.2c0-2.1 1-3.6 2.8-3.6Z" fill="#BFE6FB"/>
+            </g>
+          </svg>
+          <div class="hero-copy">
+            <span class="pill pill-light">
+              <i class="pill-dot"></i> <span id="phasePill">雏翼计划</span>
+            </span>
+            <h2>让每一双雏翼，<br>都有长青的路径。</h2>
+            <p id="heroCopy">你录入的起点，只是开始。完成一次测评、加入一门课、约一位导师，平台的数据就会跟着你一起长。</p>
+            <div class="hero-actions">
+              <button class="btn light" id="heroCta">完成职业测评</button>
+              <button class="btn ghost-light" data-coach>和 AI 教练聊聊</button>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="ring-wrap">
+              <svg id="growthRing" viewBox="0 0 180 180" aria-label="成长指数"></svg>
+              <div class="ring-label">
+                <strong id="growthIndex">—</strong>
+                <span>成长指数</span>
+              </div>
+            </div>
+            <div class="ring-foot" id="ringFoot">基于起点自评 · 待测评校准</div>
+          </div>
+        </div>
+
+        <div class="insight-row" id="insightRow"></div>
+
+        <div class="grid grid-7-5">
+          <article class="card chart-card">
+            <div class="card-head">
+              <div>
+                <p class="micro">GROWTH TREND</p>
+                <h3>成长轨迹</h3>
+              </div>
+              <div class="seg" id="trendSeg">
+                <button class="is-active">近 6 个月</button>
+                <button>近 1 年</button>
+              </div>
+            </div>
+            <div class="legend">
+              <span><i class="dot-forest"></i>我的成长指数</span>
+              <span><i class="dot-dash"></i>同批次均值</span>
+              <span class="legend-note" id="trendNote">历史点位为模型回推</span>
+            </div>
+            <svg class="line-chart" id="growthChart" viewBox="0 0 620 230" role="img" aria-label="成长指数折线图"></svg>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <div>
+                <p class="micro">NEXT ACTIONS</p>
+                <h3>你的成长闭环</h3>
+              </div>
+              <span class="counter" id="actionCounter">0 / 4</span>
+            </div>
+            <div class="action-list" id="actionList"></div>
+            <div class="progress-line"><i id="actionProgress" style="width:0%"></i></div>
+            <p class="tiny" id="actionNote">每完成一步，平台会记录一条真实数据。</p>
+          </article>
+        </div>
+
+        <div class="grid grid-5-7">
+          <article class="card">
+            <div class="card-head">
+              <div>
+                <p class="micro">CAPABILITY MAP</p>
+                <h3>能力画像</h3>
+              </div>
+              <button class="link-btn" data-goto="assessment">重新测评</button>
+            </div>
+            <div class="radar-source" id="radarSource">起点自评</div>
+            <svg id="overviewRadar" class="radar" viewBox="0 0 320 300" role="img" aria-label="六维能力雷达图"></svg>
+            <div class="radar-note" id="radarNote"></div>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <div>
+                <p class="micro">CURATED FOR YOU</p>
+                <h3>为你推荐</h3>
+              </div>
+              <button class="link-btn" data-goto="training">查看全部</button>
+            </div>
+            <div class="mini-list" id="overviewRecs"></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= ASSESSMENT ================= -->
+      <section class="view" id="view-assessment" data-title="职业发展测评">
+        <div class="view-head">
+          <div>
+            <p class="eyebrow">CAREER ASSESSMENT · 六维能力坐标</p>
+            <h1>你正在成为<br>什么样的职场人？</h1>
+            <p class="lead">9 道情境题，AI 从 6 个维度描绘你的能力坐标。所有结果都由你的选择实时计算。</p>
+          </div>
+          <div class="head-actions">
+            <span class="status-pill" id="assessStatus"><i></i>未开始</span>
+          </div>
+        </div>
+
+        <div id="assessIntro" class="assess-intro">
+          <article class="card assess-hero">
+            <div class="orbit-stage" aria-hidden="true">
+              <div class="orbit-ring ring-1"></div>
+              <div class="orbit-ring ring-2"></div>
+              <div class="orbit-ring ring-3"></div>
+              <div class="orbit-core"><span id="orbitName">你</span><em id="orbitLevel">—</em></div>
+              <span class="orbit-chip" style="left:50%;top:2%"><i></i>学习敏锐度</span>
+              <span class="orbit-chip" style="left:84%;top:24%"><i></i>创新驱动</span>
+              <span class="orbit-chip" style="left:84%;top:68%"><i></i>专业深度</span>
+              <span class="orbit-chip" style="left:50%;top:90%"><i></i>韧性抗压</span>
+              <span class="orbit-chip" style="left:16%;top:68%"><i></i>领导潜能</span>
+              <span class="orbit-chip" style="left:16%;top:24%"><i></i>协作影响力</span>
+            </div>
+            <div class="assess-hero-foot">
+              <div class="stat"><strong>9</strong><span>道情境题</span></div>
+              <div class="stat"><strong>4</strong><span>分钟完成</span></div>
+              <div class="stat"><strong>6</strong><span>能力维度</span></div>
+            </div>
+          </article>
+
+          <article class="card dim-card">
+            <div class="card-head">
+              <div>
+                <p class="micro">DIMENSIONS</p>
+                <h3>我们如何理解你</h3>
+              </div>
+            </div>
+            <p class="dim-intro">测评不贴标签。它只回答一个问题：在真实的职场情境里，你更习惯怎样思考、协作与行动。</p>
+            <ul class="dim-list">
+              <li><span class="dim-bullet" style="--c:#005DAA"></span><div><strong>学习敏锐度</strong><em>从经验中快速提取规律</em></div><b>25%</b></li>
+              <li><span class="dim-bullet" style="--c:#38B6E5"></span><div><strong>协作影响力</strong><em>让他人愿意与你一起成事</em></div><b>20%</b></li>
+              <li><span class="dim-bullet" style="--c:#2E9FD8"></span><div><strong>领导潜能</strong><em>在模糊中定方向、担责任</em></div><b>20%</b></li>
+              <li><span class="dim-bullet" style="--c:#4F6FA8"></span><div><strong>专业深度</strong><em>形成可复用的方法论</em></div><b>15%</b></li>
+              <li><span class="dim-bullet" style="--c:#C8102E"></span><div><strong>创新驱动</strong><em>提出并验证新的可能</em></div><b>10%</b></li>
+              <li><span class="dim-bullet" style="--c:#8CBBDD"></span><div><strong>韧性抗压</strong><em>在压力下保持稳定输出</em></div><b>10%</b></li>
+            </ul>
+            <div class="assess-cta">
+              <button class="btn primary" id="startAssess">开始测评
+                <svg class="ico-xs" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+              </button>
+              <button class="btn ghost" id="demoAssess">使用示例作答</button>
+            </div>
+            <p class="tiny center">测评结果仅用于个人发展，不会进入绩效评价。</p>
+          </article>
+        </div>
+
+        <div id="assessQuiz" class="quiz-shell" hidden>
+          <div class="quiz-top">
+            <span class="quiz-count">问题 <b id="qIndex">1</b> <em>/ 9</em></span>
+            <div class="quiz-progress"><i id="qProgress"></i></div>
+            <button class="text-btn" id="quitQuiz">退出测评</button>
+          </div>
+          <article class="question-card">
+            <p class="q-kicker">Q<span id="qNo">1</span> · 情境选择</p>
+            <h2 id="qText"></h2>
+            <div class="options" id="qOptions"></div>
+            <div class="quiz-foot">
+              <button class="btn ghost sm" id="qBack">上一题</button>
+              <span class="hint">没有标准答案，选择最接近真实状态的一项</span>
+            </div>
+          </article>
+        </div>
+
+        <div id="assessResult" class="result-grid" hidden>
+          <article class="card radar-card">
+            <div class="card-head">
+              <div>
+                <p class="micro">YOUR MAP</p>
+                <h3>能力坐标</h3>
+              </div>
+              <span class="tag-soft" id="assessStamp">—</span>
+            </div>
+            <svg id="resultRadar" class="radar radar-lg" viewBox="0 0 360 330" role="img" aria-label="测评结果雷达图"></svg>
+            <div class="radar-scale"><span>50</span><span>75</span><span>100</span><span class="scale-note">分数基于同岗位常模校准</span></div>
+          </article>
+
+          <div class="result-side">
+            <article class="card archetype">
+              <p class="micro">YOUR ARCHETYPE</p>
+              <h2 id="archetypeName">—</h2>
+              <p id="archetypeDesc"></p>
+              <div class="trait-row" id="traitRow"></div>
+            </article>
+
+            <article class="card ai-read">
+              <div class="ai-read-head">
+                <span class="spark-ico sm">
+                  <svg viewBox="0 0 24 24"><path d="m12 3 1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4Z"/></svg>
+                </span>
+                <strong>AI 解读</strong>
+                <span class="typing-flag" id="assessTyping">正在生成…</span>
+              </div>
+              <div class="ai-text" id="assessAiText"></div>
+            </article>
+
+            <div class="result-actions">
+              <button class="btn primary" data-goto="training">生成培养计划
+                <svg class="ico-xs" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+              </button>
+              <button class="btn ghost" id="retakeAssess">重新测评</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TRAINING ================= -->
+      <section class="view" id="view-training" data-title="培训推荐">
+        <div class="view-head">
+          <div>
+            <p class="eyebrow">LEARNING · 个性化培养</p>
+            <h1>不是更多课程，<br>是更对的下一步。</h1>
+            <p class="lead" id="trainingLead">AI 结合你的能力数据与岗位路径，从 128 门课程中筛出最值得投入的几门。</p>
+          </div>
+          <div class="head-actions">
+            <span class="status-pill is-green" id="trainingStat"><i></i>本月已学习 0 小时</span>
+          </div>
+        </div>
+
+        <div class="ai-banner">
+          <span class="spark-ico">
+            <svg viewBox="0 0 24 24"><path d="m12 3 1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4Z"/></svg>
+          </span>
+          <div>
+            <strong>AI 推荐逻辑</strong>
+            <p id="trainingReason"></p>
+          </div>
+          <button class="btn ghost sm" id="refreshRec">刷新推荐</button>
+        </div>
+
+        <div class="training-layout">
+          <div>
+            <div class="filter-row" id="courseFilters">
+              <button class="chip is-active" data-filter="all">全部</button>
+              <button class="chip" data-filter="lead">领导力</button>
+              <button class="chip" data-filter="expert">专业精进</button>
+              <button class="chip" data-filter="cross">跨界融合</button>
+              <button class="chip" data-filter="digital">数字化</button>
+              <button class="chip" data-filter="well">自我管理</button>
+            </div>
+            <div class="course-grid" id="courseGrid"></div>
+          </div>
+
+          <aside class="plan-panel">
+            <div class="plan-head">
+              <div>
+                <p class="micro">MY PLAN</p>
+                <h3>我的学习计划</h3>
+              </div>
+              <span class="plan-count" id="planCount">0 门</span>
+            </div>
+            <div id="planList" class="plan-list"></div>
+            <div class="plan-total">
+              <span>计划总时长</span>
+              <strong id="planHours">0 h</strong>
+            </div>
+
+            <div class="path">
+              <p class="micro">AI 学习路径 · 未来 3 个月</p>
+              <div id="pathList"></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ================= MENTOR ================= -->
+      <section class="view" id="view-mentor" data-title="导师匹配">
+        <div class="view-head">
+          <div>
+            <p class="eyebrow">MENTORSHIP · 关键引路人</p>
+            <h1>让对的人，<br>在对的时刻出现。</h1>
+            <p class="lead" id="mentorLead">你录入导师信息，AI 负责计算匹配度：不只看你仰望谁，也看谁能补上你当下的能力缺口。</p>
+          </div>
+          <div class="head-actions">
+            <button class="btn ghost" id="matchingInfo">匹配逻辑说明</button>
+            <button class="btn primary" id="addMentorBtn">
+              <svg class="ico-xs" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+              添加导师
+            </button>
+          </div>
+        </div>
+
+        <div class="match-hero" id="mentorHero">
+          <div>
+            <span class="pill pill-light"><i class="pill-dot"></i> 匹配模型 · 基于你的测评</span>
+            <h2>匹配度不是相似度。</h2>
+            <p>我们更关注：导师能否补上你的能力缺口，是否理解你的成长目标，以及你们的协作节奏是否合拍。</p>
+          </div>
+          <div class="factor-row">
+            <div class="factor"><strong>40%</strong><span>能力互补</span></div>
+            <div class="factor"><strong>35%</strong><span>目标一致</span></div>
+            <div class="factor"><strong>25%</strong><span>风格契合</span></div>
+          </div>
+        </div>
+
+        <p class="source-line" id="mentorNote"></p>
+
+        <div class="filter-row" id="mentorFilters">
+          <button class="chip is-active" data-filter="all">全部导师</button>
+          <button class="chip" data-filter="lead">领导潜能</button>
+          <button class="chip" data-filter="expert">专业深度</button>
+          <button class="chip" data-filter="collab">协作影响力</button>
+          <button class="chip" data-filter="resil">韧性抗压</button>
+        </div>
+
+        <div class="mentor-grid" id="mentorGrid"></div>
+      </section>
+
+      <!-- ================= ARCHIVE ================= -->
+      <section class="view" id="view-archive" data-title="成长档案">
+        <div class="view-head">
+          <div>
+            <p class="eyebrow">GROWTH ARCHIVE · 可被看见的成长</p>
+            <h1>成长不是感觉，<br>是可以回看的证据。</h1>
+            <p class="lead">测评、课程、导师与反馈自动沉淀，形成一份属于你自己的、持续更新的成长档案。</p>
+          </div>
+          <div class="head-actions">
+            <button class="btn ghost" id="exportArchive">
+              <svg class="ico-xs" viewBox="0 0 24 24"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5"/><path d="M5 20h14"/></svg>
+              导出档案
+            </button>
+            <button class="btn primary" id="shareArchive">分享给导师</button>
+          </div>
+        </div>
+
+        <article class="profile-card" id="archiveProfile">
+          <div class="profile-glow" aria-hidden="true"></div>
+          <div class="profile-main">
+            <div class="avatar avatar-xl" id="arAvatar">你</div>
+            <div class="profile-id">
+              <div class="profile-name-row">
+                <h2 id="arName">—</h2>
+                <span class="pill pill-light" id="arPill">—</span>
+              </div>
+              <p id="arRole">—</p>
+              <div class="profile-meta" id="arMeta"></div>
+            </div>
+          </div>
+          <div class="profile-stats" id="arStats"></div>
+        </article>
+
+        <div class="grid grid-7-5">
+          <article class="card">
+            <div class="card-head">
+              <div>
+                <p class="micro">MILESTONES</p>
+                <h3>成长里程碑</h3>
+              </div>
+              <span class="tag-soft">由你的操作自动记录</span>
+            </div>
+            <div class="timeline" id="timeline"></div>
+          </article>
+
+          <div class="archive-side">
+            <article class="card">
+              <div class="card-head">
+                <div>
+                  <p class="micro">CAPABILITY SHIFT</p>
+                  <h3>能力变化</h3>
+                </div>
+                <span class="tag-soft" id="archiveCompareTag">起点 → 现在</span>
+              </div>
+              <svg id="archiveRadar" class="radar" viewBox="0 0 320 300" role="img" aria-label="能力变化雷达图"></svg>
+              <div class="legend legend-center">
+                <span><i class="dot-forest"></i><span id="archiveLegendNow">现在</span></span>
+                <span><i class="dot-amber-dash"></i><span id="archiveLegendBase">起点自评</span></span>
+              </div>
+            </article>
+
+            <article class="card ai-read">
+              <div class="ai-read-head">
+                <span class="spark-ico sm">
+                  <svg viewBox="0 0 24 24"><path d="m12 3 1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4Z"/></svg>
+                </span>
+                <strong>AI 成长总结</strong>
+              </div>
+              <div class="ai-text" id="archiveAiText"></div>
+              <div class="summary-tags" id="archiveTags"></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="achievement-grid" id="achieveGrid"></div>
+      </section>
+
+      <!-- ================= FEEDBACK ================= -->
+      <section class="view" id="view-feedback" data-title="员工反馈">
+        <div class="view-head">
+          <div>
+            <p class="eyebrow">VOICE · 让组织听见你</p>
+            <h1>每一句真心话，<br>都值得被认真对待。</h1>
+            <p class="lead">这份问卷由你自己填写。AI 根据你的打分与文字，生成属于你的体验分析。</p>
+          </div>
+          <div class="head-actions">
+            <span class="status-pill is-green"><i></i>本期问卷 · 约 1 分钟</span>
+          </div>
+        </div>
+
+        <div class="feedback-layout">
+          <article class="card survey-card" id="feedbackSurvey">
+            <div class="card-head">
+              <div>
+                <p class="micro">PULSE SURVEY · 本月</p>
+                <h3>成长体验脉搏</h3>
+              </div>
+              <span class="tag-soft">约 1 分钟</span>
+            </div>
+
+            <div class="survey-item">
+              <div class="survey-q"><span>我能清楚看到自己在公司内的成长路径。</span><b data-val="6">6</b></div>
+              <input type="range" min="0" max="10" value="6" data-slider data-key="path" aria-label="成长路径清晰度">
+              <div class="range-labels"><span>完全不认同</span><span>非常认同</span></div>
+            </div>
+            <div class="survey-item">
+              <div class="survey-q"><span>过去一个月，我在工作中有学习和成长的机会。</span><b data-val="6">6</b></div>
+              <input type="range" min="0" max="10" value="6" data-slider data-key="learn" aria-label="学习成长机会">
+              <div class="range-labels"><span>完全没有</span><span>非常多</span></div>
+            </div>
+            <div class="survey-item">
+              <div class="survey-q"><span>我的导师或上级会给我具体、有帮助的反馈。</span><b data-val="6">6</b></div>
+              <input type="range" min="0" max="10" value="6" data-slider data-key="feedback" aria-label="反馈质量">
+              <div class="range-labels"><span>几乎没有</span><span>总是如此</span></div>
+            </div>
+            <div class="survey-item">
+              <div class="survey-q"><span>团队协作让我感到被支持，而不是被消耗。</span><b data-val="6">6</b></div>
+              <input type="range" min="0" max="10" value="6" data-slider data-key="collab" aria-label="团队协作感受">
+              <div class="range-labels"><span>非常消耗</span><span>非常支持</span></div>
+            </div>
+
+            <label class="survey-text">
+              <span>想多说一点？（选填）</span>
+              <textarea id="feedbackText" rows="3" placeholder="最近让你有成长感或挫败感的一件事……"></textarea>
+            </label>
+
+            <div class="survey-foot">
+              <label class="switch-row">
+                <input type="checkbox" id="anonToggle" checked>
+                <span class="switch"></span>
+                <span>匿名提交，仅用于组织发展分析</span>
+              </label>
+              <button class="btn primary" id="submitFeedback">提交心声
+                <svg class="ico-xs" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="card analysis-card" id="analysisCard">
+            <div class="card-head">
+              <div>
+                <p class="micro">AI SENTIMENT</p>
+                <h3>你的体验分析</h3>
+              </div>
+              <span class="tag-soft" id="analysisTag">等待提交</span>
+            </div>
+
+            <div id="analysisEmpty" class="analysis-empty">
+              <div class="empty-orbit">
+                <span></span><span></span><span></span>
+                <svg class="ico" viewBox="0 0 24 24"><path d="m12 3 1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4Z"/></svg>
+              </div>
+              <p>提交后，AI 会根据你的四项打分与文字，识别情绪温度、关注主题，并给出可执行的管理建议。</p>
+              <em>你的原始回答不会展示给直属上级。</em>
+            </div>
+
+            <div id="analysisResult" hidden></div>
+          </article>
+        </div>
+
+        <div class="grid grid-7-5">
+          <article class="card">
+            <div class="card-head">
+              <div>
+                <p class="micro">BASELINE</p>
+                <h3>你的评分 vs 参考基线</h3>
+              </div>
+              <span class="tag-soft">示例基线 · 可替换</span>
+            </div>
+            <div class="benchmark" id="benchmark"></div>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <div>
+                <p class="micro">MY ECHO</p>
+                <h3>我的回声</h3>
+              </div>
+            </div>
+            <div class="echo-list" id="echoList"></div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="foot">
+        <span>雏翼长青 · Young Wings Evergreen</span>
+        <span>AI 只提供建议，成长的决定权始终在你手里。</span>
+      </footer>
+    </main>
+  </div>
+</div>
+
+<!-- ================= Coach Drawer ================= -->
+<div class="drawer-scrim" id="drawerScrim"></div>
+<aside class="coach-drawer" id="coachDrawer" aria-label="AI 发展教练">
+  <header class="coach-head">
+    <div class="coach-avatar">
+      <svg viewBox="0 0 24 24"><path d="m12 3 1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4Z"/></svg>
+    </div>
+    <div>
+      <strong>AI 发展教练</strong>
+      <span><i class="live-dot"></i> 已读取你的自评与测评数据</span>
+    </div>
+    <button class="icon-btn" id="closeCoach" aria-label="关闭">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </header>
+  <div class="coach-messages" id="coachMessages"></div>
+  <div class="coach-prompts" id="coachPrompts">
+    <button>我该优先补哪项能力？</button>
+    <button>怎么跟导师开第一次会？</button>
+    <button>我的档案说明了什么？</button>
+  </div>
+  <form class="coach-input" id="coachForm">
+    <input id="coachInput" type="text" placeholder="问问你的成长困惑…" autocomplete="off">
+    <button class="send-btn" type="submit" aria-label="发送">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M4.5 12 20 4l-4.5 16-4-6.5z"/><path d="m11.5 13.5 8.5-9.5"/></svg>
+    </button>
+  </form>
+</aside>
+
+<!-- ================= Mentor Modal ================= -->
+<div class="modal-scrim" id="mentorModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mentorModalTitle">
+    <button class="modal-close" id="closeMentorModal" aria-label="关闭">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <p class="micro">AI 已为你准备好对话议程</p>
+    <h2 id="mentorModalTitle">导师对话</h2>
+    <p class="modal-sub" id="mentorModalSub"></p>
+    <div class="agenda" id="agendaList"></div>
+    <p class="micro modal-time-label">选择时间</p>
+    <div class="time-chips" id="timeChips">
+      <button class="time-chip is-active">周四 19:00</button>
+      <button class="time-chip">周五 12:30</button>
+      <button class="time-chip">下周一 10:00</button>
+    </div>
+    <div class="modal-foot">
+      <button class="btn ghost" id="cancelMentor">稍后再说</button>
+      <button class="btn primary" id="confirmMentor">确认发起约见</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= Profile Modal ================= -->
+<div class="modal-scrim" id="profileModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
+    <button class="modal-close" id="closeProfileModal" aria-label="关闭">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <p class="micro">IDENTITY</p>
+    <h2 id="profileModalTitle">编辑我的资料</h2>
+    <p class="modal-sub">修改后，平台内的称呼与档案会同步更新。</p>
+
+    <div class="ob-grid modal-grid">
+      <label class="field"><span>姓名</span><input id="pmName" type="text" autocomplete="off"></label>
+      <label class="field"><span>部门</span>
+        <select id="pmDept">
+          <option value="">请选择部门</option>
+          <option>产品</option><option>技术</option><option>运营</option>
+          <option>市场</option><option>设计</option><option>人力</option>
+          <option>财务</option><option>其他</option>
+        </select>
+      </label>
+      <label class="field"><span>岗位</span><input id="pmRole" type="text" autocomplete="off"></label>
+      <label class="field"><span>职级</span>
+        <select id="pmLevel">
+          <option value="">请选择职级</option>
+          <option>管培生</option><option>P4</option><option>P5</option>
+          <option>P6</option><option>P7</option><option>M1</option>
+        </select>
+      </label>
+      <label class="field"><span>入职时间</span><input id="pmJoined" type="month"></label>
+      <label class="field"><span>职业目标</span>
+        <select id="pmGoal">
+          <option value="lead">成为管理者</option>
+          <option value="expert">成为专家</option>
+          <option value="innov">从 0 到 1</option>
+          <option value="learn">持续进化</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="modal-foot">
+      <button class="btn ghost" id="cancelProfile">取消</button>
+      <button class="btn primary" id="saveProfile">保存修改</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= Add Mentor Modal ================= -->
+<div class="modal-scrim" id="addMentorModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="addMentorTitle">
+    <button class="modal-close" id="closeAddMentor" aria-label="关闭">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <p class="micro">MENTOR · 由你录入</p>
+    <h2 id="addMentorTitle">添加一位导师</h2>
+    <p class="modal-sub">把你真正想连接的人放进来。匹配度会按你的能力缺口实时计算，不预设任何人物。</p>
+
+    <div class="ob-grid modal-grid">
+      <label class="field"><span>姓名 <b>*</b></span><input id="amName" type="text" placeholder="导师姓名" autocomplete="off"></label>
+      <label class="field"><span>身份 / 岗位</span><input id="amRole" type="text" placeholder="例如：资深产品经理" autocomplete="off"></label>
+
+      <div class="field modal-wide">
+        <span>擅长能力维度（可多选）<b>*</b></span>
+        <div class="dim-picks" id="amDims">
+          <button type="button" class="dim-pick" data-dim="learn">学习敏锐度</button>
+          <button type="button" class="dim-pick" data-dim="collab">协作影响力</button>
+          <button type="button" class="dim-pick" data-dim="lead">领导潜能</button>
+          <button type="button" class="dim-pick" data-dim="expert">专业深度</button>
+          <button type="button" class="dim-pick" data-dim="innov">创新驱动</button>
+          <button type="button" class="dim-pick" data-dim="resil">韧性抗压</button>
+        </div>
+      </div>
+
+      <label class="field"><span>与你目标的契合方向</span>
+        <select id="amGoal">
+          <option value="lead">成为管理者</option>
+          <option value="expert">成为专家</option>
+          <option value="innov">从 0 到 1</option>
+          <option value="learn">持续进化</option>
+        </select>
+      </label>
+      <label class="field"><span>可约时间（选填）</span><input id="amSlots" type="text" placeholder="例如：每周四晚" autocomplete="off"></label>
+      <label class="field modal-wide"><span>你想向这位导师学习什么（选填）</span>
+        <textarea id="amNote" rows="2" placeholder="写下你的真实诉求，AI 生成对话议程时会用到。"></textarea>
+      </label>
+    </div>
+
+    <p class="ob-error" id="amError" hidden>请填写导师姓名，并至少选择一项擅长维度。</p>
+
+    <div class="modal-foot">
+      <button class="btn ghost" id="cancelAddMentor">取消</button>
+      <button class="btn primary" id="saveMentor">保存导师</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= Demo Panel ================= -->
+<div class="demo-panel" id="demoPanel" hidden>
+  <div class="demo-top">
+    <span class="demo-badge">演示模式</span>
+    <span class="demo-step" id="demoStepNum">01 / 06</span>
+    <button class="demo-close" id="exitDemo" aria-label="退出演示">
+      <svg class="ico-xs" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <div class="demo-progress"><i id="demoProgress"></i></div>
+  <h3 id="demoTitle">看见起点</h3>
+  <p id="demoDesc"></p>
+  <p class="demo-hint" id="demoHint"></p>
+  <div class="demo-foot">
+    <button class="demo-nav" id="demoPrev">上一步</button>
+    <div class="demo-dots" id="demoDots"></div>
+    <button class="demo-next" id="demoNext">下一步 →</button>
+  </div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
